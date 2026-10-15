@@ -1,0 +1,49 @@
+IMPORT PHOTOS
+=============
+Copies photos and videos from an SD card (or any folder) into a folder you choose,
+organised by date. It only ever COPIES: nothing on the card is moved or deleted.
+
+REQUIRES: an Apple Silicon Mac (M1 or newer, NOT an Intel Mac) running macOS 14 (Sonoma) or newer.
+
+INSTALL
+-------
+1. Drag "Import Photos" onto the Applications folder in this window.
+2. Eject this disk image.
+
+FIRST OPEN (one-time, because the app is not from the App Store)
+----------------------------------------------------------------
+The first time, macOS will say it can't verify the app. That is expected: it is shared
+directly, not through Apple. To open it anyway:
+
+  macOS 15 (Sequoia) or newer:
+    - Open the app once and click "Done" on the warning.
+    - Open System Settings > Privacy & Security, scroll down, click "Open Anyway" next
+      to "Import Photos", and confirm.
+  macOS 14 (Sonoma):
+    - Right-click (or Control-click) the app in Applications, choose Open, then Open.
+
+  Either way, if it still refuses, open Terminal and run:
+    xattr -dr com.apple.quarantine "/Applications/Import Photos.app"
+
+You only have to do this once per downloaded version.
+
+USING IT
+--------
+1. "Choose Source..." - pick the SD card or a folder (or individual photos).
+2. "Choose..." under Destination - where the photos should go.
+3. Pick photos in the grid (click, Cmd-click, Shift-click, Cmd-A). Space = big preview.
+3b. Sort menu: by file date, capture date (from the photo's own EXIF), or name.
+4. Template decides the folders, e.g. {{YEAR}}/{{MONTH}}/{{NAME}}.
+5. Time Offset fixes a camera clock that was wrong (the Preview shows the effect).
+6. Click Import. Cancel stops after the current file; what is already copied stays.
+
+GOOD TO KNOW
+------------
+- Duplicates (same name, time and size already in the destination) are skipped.
+- Sidecar files (.xmp, RawTherapee .pp3, DxO .dop, Capture One .cos, Canon .vrd, Apple .aae
+  and others) travel with their photo automatically. A sidecar already in
+  the destination is never overwritten.
+- Sidecars with no photo are ignored and listed in the results.
+- If a file can't be copied it is listed as Failed and the rest carry on.
+- After installing a NEW version you may need to choose your source and destination
+  folders again.

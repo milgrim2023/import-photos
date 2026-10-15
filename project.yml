@@ -1,0 +1,58 @@
+name: PhotoImport
+options:
+  bundleIdPrefix: com.milgrim
+  deploymentTarget:
+    macOS: "14.0"
+packages:
+  ImportPhotos:
+    path: .
+targets:
+  PhotoImport:
+    type: application
+    platform: macOS
+    sources: [App]
+    dependencies:
+      - package: ImportPhotos
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.milgrim.PhotoImport
+        CODE_SIGN_ENTITLEMENTS: App/PhotoImport.entitlements
+        ENABLE_APP_SANDBOX: YES
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_VERSION: "5.0"
+        PRODUCT_NAME: Import Photos
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_CFBundleDisplayName: Import Photos
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.photography
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Made for personal use."
+        INFOPLIST_KEY_NSPrincipalClass: NSApplication
+        CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
+        ARCHS: arm64            # Apple Silicon only: no Intel code is generated
+        EXCLUDED_ARCHS: x86_64
+  PhotoImportUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources: [UITests]
+    dependencies:
+      - target: PhotoImport
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.milgrim.PhotoImportUITests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        ARCHS: arm64
+        EXCLUDED_ARCHS: x86_64
+schemes:
+  PhotoImport:
+    build:
+      targets:
+        PhotoImport: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - PhotoImportUITests
