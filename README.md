@@ -29,3 +29,6 @@ swift test --enable-code-coverage            # then: xcrun llvm-cov report <xcte
 
 ## Architecture in one paragraph
 `RealIngestionEngine` orchestrates small protocol-backed collaborators (metadata provider, path templater, collision judge, media transferrer). `DashboardViewModel` / `ImportViewModel` hold all UI logic and are fully unit-tested; the SwiftUI views are thin. Views only render `Presentation` types and view-model state (ADR-0004). System boundaries (open panel, bookmarks, QuickLook) are the only things faked in unit tests; the UI suite uses a Debug-only fake panel and fixture photos.
+
+## License
+MIT. See `LICENSE`.
