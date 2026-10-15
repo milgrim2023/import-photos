@@ -4,8 +4,8 @@ Repo: `~/projects/milgrim2023/PhotoImport` (git repo root is two levels up and h
 Start with `README.md` (map + commands), then `CONTEXT.md` (rules/glossary), `.scratch/import-engine/PRD.md` (as-built requirements), `docs/adr/` (decisions). **This document does not repeat those**; it only holds what isn't in them.
 
 ## State at handoff (2026-10-15)
-- v1.0.0 built and working. `swift test`: **136 tests, 0 failures**; `scripts/ui-tests.sh`: **10 XCUITest smoke tests, 0 failures** (~1 min, needs an unlocked desktop; ADR-0004). Non-UI logic coverage ≈ 88% lines (≥94% everywhere except `FileSelectionService`, the `NSOpenPanel` wrapper).
-- Distributable: `scripts/release.sh` → `dist/ImportPhotos-1.0.0.dmg` (ad-hoc signed, arm64 only, ~564 KB; no UI-test code in the release binary). Verified: mounts, installs, launches, restores destination/template.
+- v1.0.1 built and working (released on GitHub as v1.0.1; v1.0.0 was the first tag, before the MIT license). `swift test`: **136 tests, 0 failures**; `scripts/ui-tests.sh`: **10 XCUITest smoke tests, 0 failures** (~1 min, needs an unlocked desktop; ADR-0004). Non-UI logic coverage ≈ 88% lines (≥94% everywhere except `FileSelectionService`, the `NSOpenPanel` wrapper).
+- Distributable: `scripts/release.sh` → `dist/ImportPhotos-1.0.1.dmg` (ad-hoc signed, arm64 only, ~850 KB; no UI-test code in the release binary). Verified: mounts, installs, launches, restores destination/template.
 - Issues 01–05, 07 and 08 are implemented (`Status: ready-for-human` = needs the user's manual check). Issue 06 is **wontfix** (author's decision). **No open tickets.**
 
 ## What the user has verified by hand vs. what is only machine-verified

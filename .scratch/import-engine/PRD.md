@@ -1,6 +1,6 @@
 # Product Requirements Document: ImportPhotos
 
-Status: **v1.0.0 built** (last updated 2026-10-15). Sections describe the product *as built*; items still open are in §7.
+Status: **v1.0.1 built** (last updated 2026-10-15). Sections describe the product *as built*; items still open are in §7.
 Implementation issues: `.scratch/import-engine/issues/`. Domain vocabulary: `CONTEXT.md`. Decisions: `docs/adr/`.
 
 ## 1. Overview

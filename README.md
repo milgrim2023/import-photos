@@ -1,6 +1,6 @@
 # ImportPhotos
 
-macOS (Apple Silicon, macOS 14+) app that **copies** photos/videos from an SD card or folder into a date-organised folder, with de-duplication, a time-offset fix, and sidecar handling. v1.0.0.
+macOS (Apple Silicon, macOS 14+) app that **copies** photos/videos from an SD card or folder into a date-organised folder, with de-duplication, a time-offset fix, and sidecar handling. v1.0.1.
 
 ## Where things are
 | What | Where |

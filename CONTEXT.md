@@ -1,6 +1,6 @@
 # Project: ImportPhotos
 
-A macOS-native utility for high-integrity media ingestion from SD cards to local storage. It only ever **copies**. v1.0.0 is built; see `.scratch/import-engine/PRD.md` for requirements and `README.md` for the repo map.
+A macOS-native utility for high-integrity media ingestion from SD cards to local storage. It only ever **copies**. v1.0.1 is built; see `.scratch/import-engine/PRD.md` for requirements and `README.md` for the repo map.
 
 ## Glossary
 - **Source / source roots**: what the user picked in the system panel. One folder = browse it; files or several items = import those.
